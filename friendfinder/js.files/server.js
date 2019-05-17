@@ -12,15 +12,15 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Star Wars Characters (DATA)
+// friend finder (DATA)
 // =============================================================
 var friends = [
   {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
+    routeName: "LebronJames",
+    name: "LebronJames",
+    role: "PowerFoward",
+    age: 34,
+    Points: 2000
   },
   {
     routeName: "darthmaul",
@@ -50,41 +50,41 @@ app.get("/add", function(req, res) {
   res.sendFile(path.join(__dirname, "add.html"));
 });
 
-// Displays all characters
-app.get("/api/characters", function(req, res) {
-  return res.json(characters);
+// Displays all friends
+app.get("/api/friends", function(req, res) {
+  return res.json(friends);
 });
 
-// Displays a single character, or returns false
-app.get("/api/characters/:character", function(req, res) {
-  var chosen = req.params.character;
+// Displays a single friend, or returns false
+app.get("/api/friends/:friend", function(req, res) {
+  var chosen = req.params.friend;
 
   console.log(chosen);
 
-  for (var i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
+  for (var i = 0; i <friends.length; i++) {
+    if (chosen ===friends[i].routeName) {
+      return res.json(friends[i]);
     }
   }
 
   return res.json(false);
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function(req, res) {
+// Create newfriends - takes in JSON input
+app.post("/api/friends", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
-  var newcharacter = req.body;
+  var newfriend = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newCharacter
+  // Using a RegEx Pattern to remove spaces from newfriend
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+  newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newcharacter);
+  console.log(newfriend);
 
-  characters.push(newcharacter);
+ friends.push(newfriend);
 
-  res.json(newcharacter);
+  res.json(newfriend);
 });
 
 // Starts the server to begin listening
