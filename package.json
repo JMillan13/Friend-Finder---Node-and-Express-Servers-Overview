@@ -1,0 +1,23 @@
+{
+  "name": "Friend-Finder---Node-and-Express-Servers-Overview",
+  "version": "1.0.0",
+  "description": "This application is a friend finder.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMillan13/Friend-Finder---Node-and-Express-Servers-Overview.git"
+  },
+  "keywords": [],
+  "author": "Joseph Millan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMillan13/Friend-Finder---Node-and-Express-Servers-Overview/issues"
+  },
+  "homepage": "https://github.com/JMillan13/Friend-Finder---Node-and-Express-Servers-Overview#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
+}
