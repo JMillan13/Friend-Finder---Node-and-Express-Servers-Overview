@@ -18,6 +18,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+  <style>
+    #match-img {
+        max-width: 90%;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,7 +31,10 @@
 
     <h2>Survey Questions</h2>
     <hr>
-
+    <h3><strong>Name</strong></h3>
+    <input type="text" id="name">
+    <h3><strong>Photo Url</strong></h3>
+    <input type="text" id="photo">
     <h3><strong>Question 1</strong></h3>
     <h4>In a room filled with people, you will mingle with the crowd.</h4>
     <select class="chosen-select" id="q1">

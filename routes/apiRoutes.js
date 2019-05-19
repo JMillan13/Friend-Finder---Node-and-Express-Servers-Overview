@@ -3,27 +3,12 @@
 // We need to include the path package to get the correct file path for our html
 // ===============================================================================
 var path = require("path");
-
+var friends = require("./friends");
 // var tableData = require("../data/tableData");
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
     return res.json(friends);
-  });
-
-  // Displays a single friend, or returns false
-  app.get("/api/friends/:friend", function(req, res) {
-    var chosen = req.params.friend;
-
-    console.log(chosen);
-
-    for (var i = 0; i <friends.length; i++) {
-      if (chosen ===friends[i].routeName) {
-        return res.json(friends[i]);
-      }
-    }
-
-    return res.json(false);
   });
 
   // Create newfriends - takes in JSON input
@@ -32,14 +17,31 @@ module.exports = function(app) {
     // This works because of our body parsing middleware
     var newfriend = req.body;
 
-    // Using a RegEx Pattern to remove spaces from newfriend
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
+    var bestDiff =  999;
 
-    console.log(newfriend);
+    var bestMatch = {};
 
-  friends.push(newfriend);
 
-    res.json(newfriend);
+    friends.forEach(function(currentFriend, i){
+
+      var currentDiff = 0;
+
+      currentFriend.scores.forEach(function(score, index){
+
+          currentDiff += Math.abs(score - newfriend.scores[index]);
+
+      });
+
+      if (currentDiff < bestDiff){
+      	bestDiff = currentDiff;
+        bestMatch = currentFriend;
+      }
+
+
+    });
+
+    friends.push(newfriend);
+
+    res.json(bestMatch);
   });
 }
