@@ -5,7 +5,7 @@ Using Express
 
 
 
- Now I will learn how those requests are handled on the server-side. My server will listen for a specific type of request at a specific endpoint and when it hears that request, it will respond accordingly.
+ 
 
 I also learned the HTTP POST request method to submit data to our server:
 
