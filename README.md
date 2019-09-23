@@ -3,8 +3,7 @@ https://jkrizzyfriendfinder.herokuapp.com/
 
 Using Express
 
-Overview
-In this unit, I will create my own server-side APIs using the Express.js framework. Express is the most widely used Node.js server framework. It will allow us to quickly and easily establish our API routes and associated HTTP request methods.
+
 
 Routing is how we design our server to handle responses when a client makes a request at a specific endpoint, or URL. I learned how to make GET requests from the client-side in a previous unit. Now I will learn how those requests are handled on the server-side. My server will listen for a specific type of request at a specific endpoint and when it hears that request, it will respond accordingly.
 
