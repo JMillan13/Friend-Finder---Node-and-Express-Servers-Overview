@@ -7,7 +7,6 @@ Using Express
 
  
 
-I also learned the HTTP POST request method to submit data to our server:
 
 Key Topics
 http
