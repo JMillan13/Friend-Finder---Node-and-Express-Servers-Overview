@@ -1,5 +1,5 @@
 https://jkrizzyfriendfinder.herokuapp.com/
-# Friend-Finder---Node-and-Express-Servers-Overview
+# Friend-Finder
 
 Using Express
 
